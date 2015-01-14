@@ -1,24 +1,31 @@
-print "Hey, what's your name? "
-name = gets.chomp
-print "How old are you? "
-age = gets.chomp.to_i
+def get_user_name
+	puts "Hey, what's your name?"
+	name = gets.chomp
+	#return name
+end
+def get_user_age
+	puts "How old are you? "
+	age = gets.chomp.to_i
+end
+name = get_user_name
+age = get_user_age
 puts "Hi #{name}, who is #{age} years old."
 puts "Do you mind if I call you #{name.chars.first}? I like nicknames."
-case age 
-	when 1..74 
-		puts "#{name}, you'll be 75 years old in #{75 - age.to_i} years, by the way."
-  when 75
-  	puts "Dang #{name}, you're 75! Dios mio man."
-  else 76..200
-  	puts "So you turned 75 #{age - 75} years ago? Oof. Now that's old."
-  end
-puts "Hey #{name.upcase}, where do you think you're going!?"
+puts "Hey #{name.upcase}, where do you think you're going!?" 
 puts "Hey \"Dude\", what's up?"
-if name == "Ernest"
-	puts "I knew it was you! Crazy Ernie..."
-else
-  puts "Sorry, you’re not Ernest! My bad."	
+def send_age_based_greeting(age, name)
+	puts "#{name}, you'll be 75 years old in #{75 - age.to_i} years, by the way." if age < 75 
+	puts "Dang #{name}, you're 75! Dios mio man." if age == 75
+	puts "So you turned 75 #{age - 75} years ago? Oof. Now that's old." if age > 75
 end
+puts send_age_based_greeting(age, name)
+
+def greet_ernest(name)
+	puts "I knew it was you! Crazy Ernie..." if name == "Ernest"
+	puts "Sorry, you’re not Ernest! My bad." if !name == "Ernest"
+end
+puts greet_ernest(name)
+
 print "Lemme ask you - are you a M or F? "
 gender = gets.chomp
 
