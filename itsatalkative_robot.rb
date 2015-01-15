@@ -32,12 +32,12 @@ puts "Hey \"Dude\", what's up?"
 puts ""
 puts "You need to go to the grocery store."
 
-grocery_list = { nuts: "cashews", beverage: "juice", dinner: "jerky", lunch: "crackers", nightcap: "milk" }
-thing = grocery_list[:nightcap]
+grocery_list = ["cashews", "juice", "jerky", "crackers", "milk"]
+thing = grocery_list[4]
 puts "Did you already grab the #{thing}?"
-grocery_list.delete(:nightcap)
+grocery_list.pop
 puts "Oh shit, don't forget the bread!"
-grocery_list.merge!(breakfast: "bread")
+grocery_list.push("bread")
 
 puts "Why you're a young boy..."   if user[:age] <= 45 && user[:gender] == "M"
 puts "Why you're a young girl..."   if user[:age] <= 45 && user[:gender] == "F"
